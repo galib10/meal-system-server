@@ -94,12 +94,10 @@ async function run() {
 }
 run().catch(console.log);
 
-console.log(process.env.ACCESS_TOKEN_SECRET);
-
 app.get("/", async (req, res) => {
   res.send(`
     <div style="text-align: center; font-family: arial; padding: 0 30px">
-    <img src="https://i.ibb.co/9sD5w3t/favicon.png" alt="Hello Talk logo" style="width: 200px; margin: 20px 0;">
+    <img src="https://i.ibb.co/9sD5w3t/favicon.png" alt="Server logo" style="width: 200px; margin: 20px 0;">
     <h1 style="font-size: 3em; margin: 10px 0;">Welcome to meal server!</h1>
   </div>
     `);
