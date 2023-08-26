@@ -1,6 +1,6 @@
 const express = require("express");
 const cors = require("cors");
-const port = process.env.PORT || 5000;
+const port = process.env.PORT || 3000;
 const { MongoClient, ServerApiVersion, ObjectId } = require("mongodb");
 require("dotenv").config();
 const app = express();
@@ -69,26 +69,26 @@ async function run() {
     //   res.send(result);
     // });
 
-    app.get("/category/:id", async (req, res) => {
-      const id = req.params.id;
-      const query = { categoryId: id };
-      const result = await productsCollection.find(query).toArray();
-      res.send(result);
-    });
+    // app.get("/category/:id", async (req, res) => {
+    //   const id = req.params.id;
+    //   const query = { categoryId: id };
+    //   const result = await productsCollection.find(query).toArray();
+    //   res.send(result);
+    // });
 
-    app.delete("/buyer/:id", async (req, res) => {
-      const id = req.params.id;
-      const filter = { _id: ObjectId(id) };
-      const result = await usersCollection.deleteOne(filter);
-      res.send(result);
-    });
+    // app.delete("/buyer/:id", async (req, res) => {
+    //   const id = req.params.id;
+    //   const filter = { _id: ObjectId(id) };
+    //   const result = await usersCollection.deleteOne(filter);
+    //   res.send(result);
+    // });
 
-    app.post("/bookings", async (req, res) => {
-      const user = req.body;
-      // console.log(user);
-      const result = await bookingsCollection.insertOne(user);
-      res.send(result);
-    });
+    // app.post("/bookings", async (req, res) => {
+    //   const user = req.body;
+    //   // console.log(user);
+    //   const result = await bookingsCollection.insertOne(user);
+    //   res.send(result);
+    // });
   } finally {
   }
 }
